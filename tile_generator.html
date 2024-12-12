@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE 385 Tile Generator</title>
+    <link rel="stylesheet" type="text/css" href="tile_generator.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex flex-row gap-3">
+            <!-- Pixel Map -->
+            <div class="pixel-container">
+                <p class="h6">Pixel Map</p>
+                <div id="pixel_map" class="pixel-map"></div>
+                <p class="h6 mt-3">Palette</p>
+                <div id="palette" class="palette"></div>
+            </div>
+
+            <!-- Tools -->
+            <div class="tools-container">
+                <p class="h6">Preview</p>
+                <div id="preview" class="preview"></div>
+                <p class="h6">Memory Content</p>
+                <textarea id="memory_content" class="form-control mb-3" rows="10"></textarea>
+                <p class="h6">Actions</p>
+                <div class="input-group mb-2">
+                    <input type="text" id="file_name" class="form-control" placeholder="tile">
+                    <span class="input-group-text">.mem</span>
+                </div>
+                <button id="download_button" type="button" class="btn btn-primary mb-2">Download .mem File</button>
+                <label class="btn btn-secondary mb-2">
+                    Upload .mem File
+                    <input id="upload_button" type="file" accept=".mem" hidden>
+                </label>
+                <button id="clear_button" type="button" class="btn btn-danger mb-3">Clear All</button>
+
+                <p class="h6">Edit Tools</p>
+                <div class="btn-group mb-3">
+                    <button id="undo_button" class="btn btn-outline-secondary">Undo</button>
+                    <button id="redo_button" class="btn btn-outline-secondary">Redo</button>
+                    <button id="mirror_horizontal_button" class="btn btn-outline-secondary">Mirror Horizontal</button>
+                    <button id="mirror_vertical_button" class="btn btn-outline-secondary">Mirror Vertical</button>
+                </div>
+
+                <div id="copy" class="text-end" style="cursor: pointer;">
+                    <small><u>Copy to Clipboard</u></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="tile_generator.js"></script>
+</body>
+</html>
